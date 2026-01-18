@@ -20,7 +20,7 @@ interface UserData {
 
 export function Dashboard({ username, isSensei, onLogout }: DashboardProps) {
   const [userData] = useState<UserData>({
-    currentBelt: 'Verde',
+    currentBelt: 'Amarillo',
     weight: 75,
     height: 175,
   });

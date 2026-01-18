@@ -12,8 +12,8 @@ export function BeltTechniques({ belt, onSelectTechnique }: BeltTechniquesProps)
   const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
 
   const beltTechniques = techniques.filter((t) => t.belt === belt.name);
-  const tachiWaza = beltTechniques.filter((t) => t.category === 'tachi-waza');
-  const neWaza = beltTechniques.filter((t) => t.category === 'ne-waza');
+  const tachiWaza = beltTechniques.filter((t) => t.category === 'NAGE-WAZA');
+  const neWaza = beltTechniques.filter((t) => t.category === 'KATAME-WAZA');      
 
   const toggleCategory = (category: string) => {
     setExpandedCategory(expandedCategory === category ? null : category);
@@ -26,24 +26,24 @@ export function BeltTechniques({ belt, onSelectTechnique }: BeltTechniquesProps)
         <Button
           variant="ghost"
           className="w-full justify-between p-3 sm:p-4 h-auto"
-          onClick={() => toggleCategory('tachi-waza')}
+          onClick={() => toggleCategory('NAGE-WAZA')}
         >
           <div className="flex items-center gap-2">
             <div
               className="w-4 h-4 rounded-full flex-shrink-0"
               style={{ backgroundColor: belt.color }}
             />
-            <span className="font-medium text-sm sm:text-base">Tachi-waza (Técnicas de Pie)</span>
+            <span className="font-medium text-sm sm:text-base">NAGE-WAZA (Técnicas de Lanzamiento)</span>
             <span className="text-xs sm:text-sm text-slate-500">({tachiWaza.length})</span>
           </div>
-          {expandedCategory === 'tachi-waza' ? (
+          {expandedCategory === 'NAGE-WAZA' ? (
             <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
           ) : (
             <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
           )}
         </Button>
 
-        {expandedCategory === 'tachi-waza' && (
+        {expandedCategory === 'NAGE-WAZA' && (
           <div className="px-3 sm:px-4 pb-3 sm:pb-4 space-y-2">
             {tachiWaza.length > 0 ? (
               tachiWaza.map((tech) => (
@@ -58,7 +58,7 @@ export function BeltTechniques({ belt, onSelectTechnique }: BeltTechniquesProps)
               ))
             ) : (
               <p className="text-center text-slate-500 py-4 text-xs sm:text-sm">
-                No hay técnicas registradas
+                No hay técnicas registradas por ti
               </p>
             )}
           </div>
@@ -70,24 +70,24 @@ export function BeltTechniques({ belt, onSelectTechnique }: BeltTechniquesProps)
         <Button
           variant="ghost"
           className="w-full justify-between p-3 sm:p-4 h-auto"
-          onClick={() => toggleCategory('ne-waza')}
+          onClick={() => toggleCategory('KATAME-WAZA')}
         >
           <div className="flex items-center gap-2">
             <div
               className="w-4 h-4 rounded-full flex-shrink-0"
               style={{ backgroundColor: belt.color }}
             />
-            <span className="font-medium text-sm sm:text-base">Ne-waza (Técnicas de Suelo)</span>
+            <span className="font-medium text-sm sm:text-base">KATAME-WAZA (Técnicas de Suelo)</span>
             <span className="text-xs sm:text-sm text-slate-500">({neWaza.length})</span>
           </div>
-          {expandedCategory === 'ne-waza' ? (
+          {expandedCategory === 'KATAME-WAZA' ? (
             <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
           ) : (
             <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
           )}
         </Button>
 
-        {expandedCategory === 'ne-waza' && (
+        {expandedCategory === 'KATAME-WAZA' && (
           <div className="px-3 sm:px-4 pb-3 sm:pb-4 space-y-2">
             {neWaza.length > 0 ? (
               neWaza.map((tech) => (

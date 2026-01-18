@@ -57,9 +57,9 @@ export function TechniqueDetail({ technique, onBack, isFavorite, onToggleFavorit
             <div>
               <h3 className="text-sm font-medium text-slate-500 mb-1">Categoría</h3>
               <p className="text-base sm:text-lg capitalize">
-                {technique.category === 'tachi-waza'
-                  ? 'Tachi-waza (Técnicas de Pie)'
-                  : 'Ne-waza (Técnicas de Suelo)'}
+                {technique.category === 'NAGE-WAZA'
+                  ? 'Nage-waza (Técnicas de Lanzamiento)'
+                  : 'Katame-waza (Técnicas de Sujeción)'}
               </p>
             </div>
             <div>
@@ -77,7 +77,7 @@ export function TechniqueDetail({ technique, onBack, isFavorite, onToggleFavorit
                 height="100%"
                 src={technique.videoUrl}
                 title={technique.name}
-                frameBorder="0"
+                frameBorder="1"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 className="w-full h-full"
